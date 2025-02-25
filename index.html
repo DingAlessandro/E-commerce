@@ -3,72 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>购物网站</title>
+    <title>ZOZO</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- 顶部导航栏 -->
-    <header>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <img src="images/logo.png" alt="Logo">
-            </div>
-            <div class="navbar-right">
-                <div class="navbar-search">
-                    <input type="text" placeholder="搜索商品...">
-                    <button>搜索</button>
+    <!-- 页面主体内容 -->
+    <div class="page-container">
+        <!-- 顶部导航栏 -->
+        <header>
+            <nav class="navbar">
+                <!-- Logo 和 Home 链接 -->
+                <div class="navbar-brand">
+                    <img src="images/logo.png" alt="Logo visvim">
+                    <a href="index.html" class="home-link">Home</a> <!-- Home 链接 -->
                 </div>
-                <div class="navbar-cart">
-                    <img src="images/carrello.png" alt="购物车">
-                    <span class="cart-count">0</span>
+        
+                <!-- 搜索和购物车 -->
+                <div class="navbar-right">
+                    <div class="navbar-search">
+                        <input type="text" placeholder="Cerca prodotti...">
+                        <button>Cerca</button>
+                    </div>
+                    <div class="navbar-cart">
+                        <img src="images/carrello.png" alt="Carrello">
+                        <span class="cart-count">0</span>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <!-- 大图片部分 -->
-    <div class="hero-image">
-        <img src="images/hero.jpg" alt="Hero Image">
+        <!-- 大图片部分 -->
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Hero Image">
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 商品展示部分 -->
+        <div class="product-grid">
+            <div class="product-item">
+                <div class="product-tag">NEW</div>
+                <img src="images/CORDA-FOLK/C_black.jpg" alt="COBDA-FOLK">
+                <div class="product-info">
+                    <h3>COBDA-FOLK</h3>
+                    <p>US$1,491.00</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/DALTON SLACKS/S_khaki.jpg" alt="BRIGADEB BOOTS-FOLK">
+                <div class="product-info">
+                    <h3>DALTON SLACKS</h3>
+                    <p>US$1,437.00</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-tag">NEW</div>
+                <img src="images/MAVCAT/M_black.jpg" alt="WABANAR BOOTS-FOLK">
+                <div class="product-info">
+                    <h3>MAVCAT</h3>
+                    <p>US$1,944.00</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/WILDCATTER SHIRT/S_green.jpg" alt="TWO BOOTS">
+                <div class="product-info">
+                    <h3>WILDCATTER SHIRT</h3>
+                    <p>US$2,180.00</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="divider"></div>
-
-    <!-- 商品展示部分 -->
-    <div class="product-grid">
-        <div class="product-item">
-            <div class="product-tag">NEW</div>
-            <img src="images/CORDA-FOLK/C_black.jpg" alt="COBDA-FOLK">
-            <div class="product-info">
-                <h3>COBDA-FOLK</h3>
-                <p>US$1,491.00</p>
-            </div>
+    <!-- 页脚部分 -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy;ZOZO inc.</p>
         </div>
-        <div class="product-item">
-            <img src="images/DALTON SLACKS/S_khaki.jpg" alt="BRIGADEB BOOTS-FOLK">
-            <div class="product-info">
-                <h3>DALTON SLACKS</h3>
-                <p>US$1,437.00</p>
-            </div>
-        </div>
-        <div class="product-item">
-            <div class="product-tag">NEW</div>
-            <img src="images/MAVCAT/M_black.jpg" alt="WABANAR BOOTS-FOLK">
-            <div class="product-info">
-                <h3>MAVCAT</h3>
-                <p>US$1,944.00</p>
-            </div>
-        </div>
-        <div class="product-item">
-            <div class="product-tag">NEW</div>
-            <img src="images/WILDCATTER SHIRT/S_green.jpg" alt="TWO BOOTS">
-            <div class="product-info">
-                <h3>WILDCATTER SHIRT</h3>
-                <p>US$2,180.00</p>
-            </div>
-        </div>
-    </div>
-    
-
-    <script src="js/main.js"></script>
+    </footer>
 </body>
 </html>

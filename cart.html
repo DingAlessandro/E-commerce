@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOZO-CART</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- 原有样式表 -->
+    <link rel="stylesheet" href="css/cart.css"> <!-- 额外的购物车样式表 -->
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo 和 Home 链接 -->
+            <div class="navbar-brand">
+                <img src="images/logo.png" alt="Logo visvim">
+                <a href="index.html" class="home-link">Home</a> <!-- Home 链接 -->
+            </div>
+
+            <!-- 搜索和购物车 -->
+            <div class="navbar-right">
+                <div class="navbar-search">
+                    <input type="text" placeholder="搜索商品...">
+                    <button>搜索</button>
+                </div>
+                <div class="navbar-cart">
+                    <img src="images/carrello.png" alt="购物车">
+                    <span class="cart-count">2</span> <!-- 购物车商品数量 -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 购物车模块 -->
+    <div class="cart-container">
+        <!-- 左侧购物车商品列表 -->
+        <div class="cart-items">
+            <!-- 商品 1 -->
+            <div class="cart-divider"></div>
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="images/MAVCAT/M_khaki.jpg" alt="MAVICAT 8.00">
+                </div>
+                <div class="item-details">
+                    <h3>MAVICAT 8.00</h3>
+                    <p>尺寸: -</p>
+                    <p>颜色: 101A03</p>
+                    <p class="item-price">价格: US$<span class="price">1206.00</span></p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="delete">删除</button>
+                </div>
+            </div>
+
+            <!-- 商品 2 -->
+            <div class="cart-divider"></div>
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="images/DALTON SLACKS/S_black.jpg" alt="DALTON BLACKS (WN)">
+                </div>
+                <div class="item-details">
+                    <h3>DALTON BLACKS (WN)</h3>
+                    <p>尺寸: 2</p>
+                    <p>颜色: BLACK</p>
+                    <p class="item-price">价格: US$<span class="price">461.00</span></p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="delete">删除</button>
+                </div>
+            </div>
+
+            <!-- 商品 3 -->
+            <div class="cart-divider"></div>
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="images/MAVCAT/M_olive.jpg" alt="MAVICAT 8.00 - OLIVE">
+                </div>
+                <div class="item-details">
+                    <h3>MAVICAT 8.00 - OLIVE</h3>
+                    <p>尺寸: -</p>
+                    <p>颜色: OLIVE</p>
+                    <p class="item-price">价格: US$<span class="price">1206.00</span></p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-control">
+                        <button class="decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increase">+</button>
+                    </div>
+                    <button class="delete">删除</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧结账模块 -->
+        <div class="checkout-summary">
+            <h3>总金额</h3>
+            <p class="total-amount">
+                <span id="original-total" style="text-decoration: line-through; display: none;">US$<span id="original-total-value"></span></span>
+                <span id="discounted-total">US$<span id="total"></span></span>
+            </p>
+
+            <!-- 优惠码输入框 -->
+            <div class="discount-code">
+                <input type="text" placeholder="输入优惠码">
+                <button>应用优惠码</button>
+                <p class="discount-error">Codice non valido</p>
+            </div>
+
+            <button class="checkout-button" id="checkout-button">Proceed to Checkout</button>
+            <p class="empty-cart-message" id="empty-cart-message" style="display: none;">Your cart is currently empty.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy;ZOZO inc.</p>
+        </div>
+    </footer>
+    <script src="js/cart.js"></script>
+</body>
+</html>

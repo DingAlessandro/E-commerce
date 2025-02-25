@@ -1,0 +1,206 @@
+/* 购物车容器 */
+.cart-container {
+    display: flex;
+    width: 80%;
+    margin: 40px auto; /* 增加与导航栏的间距 */
+    padding: 20px;
+    background-color: #fff;
+    align-items: flex-start; /* 让左侧和右侧模块顶部对齐 */
+}
+
+/* 左侧购物车商品列表 */
+.cart-items {
+    flex: 3;
+    margin-right: 20px;
+}
+
+/* 商品之间的分割线 */
+.cart-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0; /* 上下间距 */
+}
+
+/* 单个商品 */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 商品图片 */
+.item-image img {
+    width: 150px; /* 进一步增大图片宽度 */
+    height: 150px; /* 进一步增大图片高度 */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* 商品详情 */
+.item-details {
+    flex: 1;
+    min-width: 200px; /* 确保商品详情有足够的宽度 */
+}
+
+.item-details h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+
+.item-details p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+/* 商品操作按钮 */
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 150px; /* 确保操作按钮有足够的宽度 */
+}
+
+/* 数量控制 */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #000; /* 按钮改为黑色 */
+    color: #fff; /* 文字改为白色 */
+    cursor: pointer;
+}
+
+.quantity-control button:hover {
+    background-color: #333; /* 悬停时稍微变亮 */
+}
+
+.quantity-control .quantity {
+    font-size: 1rem;
+}
+
+/* 删除按钮 */
+.delete {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: #000; /* 按钮改为黑色 */
+    color: #fff; /* 文字改为白色 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    background-color: #333; /* 悬停时稍微变亮 */
+}
+
+/* 右侧结账模块 */
+.checkout-summary {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 250px; /* 缩小模块宽度 */
+    height: auto; /* 高度根据内容自适应 */
+    position: sticky; /* 固定在右侧 */
+    top: 20px; /* 距离顶部20px */
+}
+
+.checkout-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.checkout-summary .total-amount {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.checkout-summary .checkout-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #000; /* 按钮改为黑色 */
+    color: #fff; /* 文字改为白色 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-summary .checkout-button:hover {
+    background-color: #333; /* 悬停时稍微变亮 */
+}
+
+/* 禁用按钮样式 */
+.checkout-button:disabled {
+    opacity: 0.5; /* 按钮变淡 */
+    cursor: not-allowed; /* 禁用鼠标指针 */
+}
+
+/* 空购物车提示信息 */
+.empty-cart-message {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 优惠码输入框 */
+.discount-code {
+    margin-bottom: 20px;
+}
+
+.discount-code input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.discount-code button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.discount-code button:hover {
+    background-color: #333;
+}
+
+/* 优惠码错误提示 */
+.discount-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* 原价样式 */
+#original-total {
+    color: #666;
+    margin-right: 10px;
+}
+
+/* 折后价样式 */
+#discounted-total {
+    color: #000;
+    font-weight: bold;
+}

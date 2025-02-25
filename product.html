@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOZO-P</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Stili esistenti -->
+    <link rel="stylesheet" href="css/product-detail.css"> <!-- Stili aggiuntivi -->
+</head>
+<body>
+    <!-- Barra di navigazione superiore -->
+    <header>
+        <nav class="navbar">
+            <!-- Logo 和 Home 链接 -->
+            <div class="navbar-brand">
+                <img src="images/logo.png" alt="Logo visvim">
+                <a href="index.html" class="home-link">Home</a> <!-- Home 链接 -->
+            </div>
+    
+            <!-- 搜索和购物车 -->
+            <div class="navbar-right">
+                <div class="navbar-search">
+                    <input type="text" placeholder="Cerca prodotti...">
+                    <button>Cerca</button>
+                </div>
+                <div class="navbar-cart">
+                    <img src="images/carrello.png" alt="Carrello">
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sezione dettagli prodotto -->
+    <main class="product-detail">
+        <div class="product-images">
+            <!-- Immagine principale -->
+            <div class="main-image">
+                <img id="main-image" src="images/MAVCAT/M_khaki.jpg" alt="MAVCAT II (M) - KHAKI">
+            </div>
+        </div>
+        <div class="product-info">
+            <div class="product-header">
+                <h1>MAVCAT II (M)</h1>
+                <h2 class="product-price">$1,206.00</h2>
+            </div>
+            <div class="product-options">
+                <!-- KHAKI -->
+                <div class="option">
+                    <div class="thumbnail-item">
+                        <img src="images/MAVCAT/M_khaki.jpg" alt="KHAKI">
+                    </div>
+                    <h3>KHAKI</h3>
+                    <div class="size-options">
+                        <button class="add-to-cart">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                <div class="thumbnail-divider"></div> <!-- Divisore -->
+                <!-- BLACK -->
+                <div class="option">
+                    <div class="thumbnail-item">
+                        <img src="images/MAVCAT/M_black.jpg" alt="BLACK">
+                    </div>
+                    <h3>BLACK</h3>
+                    <div class="size-options">
+                        <button class="add-to-cart">Aggiungi al carrello</button>
+                    </div>
+                </div>
+                <div class="thumbnail-divider"></div> <!-- Divisore -->
+                <!-- OLIVE -->
+                <div class="option">
+                    <div class="thumbnail-item">
+                        <img src="images/MAVCAT/M_olive.jpg" alt="OLIVE">
+                    </div>
+                    <h3>OLIVE</h3>
+                    <div class="size-options">
+                        <button class="add-to-cart">Aggiungi al carrello</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-description">
+                <h2>Dettagli del prodotto</h2>
+                <p>Borsa per casco in cotone, lino e nylon personalizzato</p>
+                <p>Finali danneggiati</p>
+                <p>Nastro militare personalizzato e chiusura lampo</p>
+                <p>73% Cotone 17% Lino 10% Nylon</p>
+                <p>Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini mostrate a causa della natura del tessuto utilizzato. Inoltre, lo stile potrebbe subire un leggero restringimento dopo il lavaggio.</p>
+            </div>
+            <div class="product-specs">
+                <h2>Specifiche del prodotto</h2>
+                <table>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>HEIGHT</th>
+                        <th>WIDTH</th>
+                    </tr>
+                    <tr>
+                        <td>ONE SIZE</td>
+                        <td>51</td>
+                        <td>47</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy;ZOZO inc.</p>
+        </div>
+    </footer>
+    <script src="js/product.js"></script>
+</body>
+</html>

@@ -4,6 +4,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 确保页面至少占满整个视口高度 */
+}
+
+/* 页面容器 */
+.page-container {
+    flex: 1; /* 占据剩余空间 */
 }
 
 /* 导航栏样式 */
@@ -17,9 +25,29 @@ body {
     height: 75px; /* 调整为原来的 80% */
 }
 
+/* Logo 和 Home 链接的容器 */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Logo 和 Home 链接之间的间距 */
+}
+
 .navbar-brand img {
     height: 120px; /* 调整为原来的 80% */
     width: 120px;
+}
+
+/* Home 链接样式 */
+.home-link {
+    font-size: 1.2rem; /* Dimensione del font per il link Home */
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease; /* Aggiungi effetto hover */
+}
+
+.home-link:hover {
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+    opacity: 0.8; /* Sfuma leggermente il link al passaggio del mouse */
 }
 
 .navbar-right {
@@ -98,6 +126,7 @@ body {
 }
 
 /* 商品展示部分 */
+/* 商品展示部分 */
 .product-grid {
     display: flex;
     width: 100%;
@@ -149,4 +178,19 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.9rem;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #f5f5dc; /* 浅米色，与导航栏一致 */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd; /* 顶部边框 */
+    margin-top: 110px; /* 为页脚留出足够的空白区域 */
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
 }

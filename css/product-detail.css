@@ -1,0 +1,153 @@
+/* Sezione dettagli prodotto */
+.product-detail {
+    display: flex;
+    padding: 40px;
+    gap: 40px; /* Spaziatura tra immagini e informazioni */
+}
+
+.product-images {
+    flex: 1;
+    max-width: 50%; /* Immagine principale occupa il 50% della larghezza */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+.main-image img {
+    width: auto; /* 宽度自适应 */
+    height: auto; /* 高度自适应 */
+    max-width: 100%; /* 确保图片不超过容器宽度 */
+    max-height: 1000px; /* 根据图片高度设置最大高度 */
+    object-fit: contain; /* 保持图片比例，完整显示 */
+    border-radius: 8px;
+    transition: opacity 0.3s ease; /* Aggiungi effetto hover all'immagine */
+}
+
+.main-image img:hover {
+    opacity: 0.8; /* Sfuma l'immagine al passaggio del mouse */
+}
+
+.product-info {
+    flex: 1;
+    max-width: 50%; /* Sezione informazioni occupa il 50% della larghezza */
+}
+
+.product-header h1 {
+    font-size: 2.5rem; /* Aumenta la dimensione del font del titolo */
+    margin: 0 0 15px 0;
+}
+
+.product-price {
+    font-size: 2.5rem; /* Aumenta la dimensione del font del prezzo */
+    color: #000;
+    margin: 0 0 15px 0;
+}
+
+.product-options {
+    margin-bottom: 20px;
+}
+
+.option {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spaziatura tra miniatura e pulsante */
+}
+
+.option h3 {
+    font-size: 1.5rem; /* Aumenta la dimensione del font delle opzioni colore */
+    margin: 0;
+    color: #333; /* Colore del testo */
+}
+
+.thumbnail-item {
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Aggiungi effetto hover all'immagine */
+}
+
+.thumbnail-item:hover {
+    opacity: 0.8; /* Sfuma l'immagine al passaggio del mouse */
+}
+
+.thumbnail-item img {
+    width: 80px; /* Larghezza della miniatura */
+    height: 80px; /* Altezza della miniatura */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.thumbnail-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; /* Colore del divisore */
+    margin: 10px 0; /* Spaziatura */
+}
+
+.size-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 将内容靠右对齐 */
+    gap: 10px; /* Spaziatura tra select e pulsante */
+    width: 100%; /* 确保容器宽度占满 */
+}
+
+.size-select {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: auto; /* 将选择框推到左边 */
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #000; /* Colore di sfondo del pulsante */
+    color: #fff; /* Colore del testo del pulsante */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Dimensione del font del pulsante */
+    transition: opacity 0.3s ease; /* Aggiungi effetto hover al pulsante */
+    width: 150px; /* Larghezza del pulsante */
+    text-align: center; /* Allinea il testo al centro */
+}
+
+.add-to-cart:hover {
+    opacity: 0.7; /* Sfuma il pulsante al passaggio del mouse */
+}
+
+.product-description {
+    margin-bottom: 20px;
+}
+
+.product-description h2 {
+    font-size: 2rem; /* Aumenta la dimensione del font del titolo della descrizione */
+    margin: 0 0 15px 0;
+}
+
+.product-description p {
+    font-size: 1.4rem; /* Aumenta la dimensione del font della descrizione */
+    margin: 0 0 15px 0;
+    line-height: 1.6; /* Aumenta l'interlinea per migliorare la leggibilità */
+}
+
+.product-specs {
+    margin-bottom: 20px;
+}
+
+.product-specs h2 {
+    font-size: 2rem; /* Aumenta la dimensione del font del titolo delle specifiche */
+    margin: 0 0 15px 0;
+}
+
+.product-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-specs th, .product-specs td {
+    border: 1px solid #ddd;
+    padding: 15px; /* Aumenta il padding della tabella */
+    text-align: left;
+    font-size: 1.2rem; /* Aumenta la dimensione del font della tabella */
+}
