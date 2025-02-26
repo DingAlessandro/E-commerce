@@ -1,0 +1,72 @@
+{
+    "products": [
+      {
+        "name": "DALTON SLACKS (W/L)",
+        "price": "$681.00",
+        "colors": [
+          {
+            "color_name": "BLACK",
+            "image": "images/DALTON SLACKS/S_black.jpg",
+            "sizes": ["1", "2", "3", "4", "5"]
+          },
+          {
+            "color_name": "CHARCOAL",
+            "image": "images/DALTON SLACKS/S_charcoal.jpg",
+            "sizes": ["1", "2", "3", "4", "5"]
+          },
+          {
+            "color_name": "KHAKI",
+            "image": "images/DALTON SLACKS/S_khaki.jpg",
+            "sizes": ["1", "2", "3", "4", "5"]
+          }
+        ],
+        "description": [
+          "Pantaloni realizzati con un tessuto misto di lana tropicale e lino, ideali per un look raffinato e leggero.",
+          "Finitura pressata che conferisce un aspetto elegante e professionale.",
+          "Dotati di una cerniera personalizzata per garantire una maggiore durata e resistenza.",
+          "Bottoni in corno di bufalo, per un tocco di classe e robustezza.",
+          "Composizione: 76% lana, 24% lino per una combinazione perfetta di comfort e stile.",
+          "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini mostrate, a causa delle caratteristiche uniche del tessuto. Inoltre, è possibile che il prodotto subisca un leggero restringimento dopo il primo lavaggio."
+        ],
+        "specs": [
+          {"size": "1", "length": "98.5", "inseam": "70.2", "waist": "80", "thigh_width": "31.3", "hem": "17.5"},
+          {"size": "2", "length": "101", "inseam": "72.2", "waist": "85", "thigh_width": "32.5", "hem": "18.7"},
+          {"size": "3", "length": "103.5", "inseam": "74.2", "waist": "90", "thigh_width": "33.8", "hem": "20"},
+          {"size": "4", "length": "106", "inseam": "76.2", "waist": "95", "thigh_width": "35", "hem": "21.2"},
+          {"size": "5", "length": "108.5", "inseam": "78.2", "waist": "100", "thigh_width": "36.3", "hem": "22.5"}
+        ]
+      },
+      {
+        "name": "MAVCAT II (M)",
+        "price": "$1,206.00",
+        "colors": [
+          {
+            "color_name": "KHAKI",
+            "image": "images/MAVCAT/M_khaki.jpg",
+            "sizes": ["ONE SIZE"]
+          },
+          {
+            "color_name": "BLACK",
+            "image": "images/MAVCAT/M_black.jpg",
+            "sizes": ["ONE SIZE"]
+          },
+          {
+            "color_name": "OLIVE",
+            "image": "images/MAVCAT/M_olive.jpg",
+            "sizes": ["ONE SIZE"]
+          }
+        ],
+        "description": [
+          "Borsa per casco realizzata con un mix di cotone, lino e nylon personalizzato, perfetta per chi cerca un accessorio resistente e dal design unico.",
+          "Design con finali danneggiati per un look vintage e autentico.",
+          "Nastro militare personalizzato e chiusura lampo, per un tocco di stile funzionale e pratico.",
+          "Composizione: 73% cotone, 17% lino, 10% nylon per garantire durabilità e comfort.",
+          "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini a causa della natura del tessuto. Inoltre, il prodotto potrebbe subire un lieve restringimento dopo il lavaggio."
+        ],
+        "specs": [
+          {"size": "ONE SIZE", "height": "51", "width": "47"}
+        ]
+      }
+    ]
+  }
+  

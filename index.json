@@ -1,0 +1,31 @@
+{
+    "hero": {
+      "image": "images/hero.jpg",
+      "alt": "Hero Image"
+    },
+    "products": [
+      {
+        "name": "COBDA-FOLK",
+        "price": "US$1,491.00",
+        "image": "images/CORDA-FOLK/C_black.jpg",
+        "tag": "NEW"
+      },
+      {
+        "name": "DALTON SLACKS (W/L)",
+        "price": "US$1,437.00",
+        "image": "images/DALTON SLACKS/S_khaki.jpg"
+      },
+      {
+        "name": "MAVCAT II (M)",
+        "price": "US$1,944.00",
+        "image": "images/MAVCAT/M_black.jpg",
+        "tag": "NEW"
+      },
+      {
+        "name": "WILDCATTER SHIRT",
+        "price": "US$2,180.00",
+        "image": "images/WILDCATTER SHIRT/S_green.jpg"
+      }
+    ]
+  }
+  

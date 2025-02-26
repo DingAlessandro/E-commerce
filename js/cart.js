@@ -101,3 +101,37 @@ document.querySelector('.discount-code button').addEventListener('click', () => 
 
 // 初始化
 updateCart();
+
+// Checkout逻辑
+document.getElementById('checkout-button').addEventListener('click', () => {
+    const cartItems = document.querySelectorAll('.cart-item');
+    const emptyCartMessage = document.getElementById('empty-cart-message');
+
+    if (cartItems.length === 0) {
+        alert('Il carrello è vuoto!');
+        return;
+    }
+
+    // Svuota il carrello
+    document.querySelector('.cart-items').innerHTML = '';
+    updateCart(); // Aggiorna il totale
+
+    // Mostra il modal di successo
+    const modal = document.getElementById('success-modal');
+    modal.style.display = 'flex';
+
+    // Chiudi il modal quando si clicca sul pulsante di chiusura
+    document.getElementById('modal-close-btn').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Chiudi il modal quando si clicca fuori dal contenuto
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Mostra il messaggio "Il carrello è vuoto"
+    emptyCartMessage.style.display = 'block';
+});

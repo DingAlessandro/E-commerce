@@ -8,29 +8,27 @@
     <link rel="stylesheet" href="css/cart.css"> <!-- 额外的购物车样式表 -->
 </head>
 <body>
-    <!-- 顶部导航栏 -->
     <header>
         <nav class="navbar">
-            <!-- Logo 和 Home 链接 -->
+            <!-- Logo e Home link -->
             <div class="navbar-brand">
                 <img src="images/logo.png" alt="Logo visvim">
-                <a href="index.html" class="home-link">Home</a> <!-- Home 链接 -->
+                <a href="" class="home-link"></a> <!-- Link alla home -->
             </div>
-
-            <!-- 搜索和购物车 -->
+        
+            <!-- Ricerca e Carrello -->
             <div class="navbar-right">
-                <div class="navbar-search">
-                    <input type="text" placeholder="搜索商品...">
-                    <button>搜索</button>
-                </div>
                 <div class="navbar-cart">
-                    <img src="images/carrello.png" alt="购物车">
-                    <span class="cart-count">2</span> <!-- 购物车商品数量 -->
+                    <!-- Link al carrello aggiunto dinamicamente con JSON -->
+                    <a href="">
+                        <img src="images/carrello.png" alt="Carrello">
+                        <span class="cart-count">0</span>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
-
+    
     <!-- 购物车模块 -->
     <div class="cart-container">
         <!-- 左侧购物车商品列表 -->
@@ -112,7 +110,7 @@
 
             <!-- 优惠码输入框 -->
             <div class="discount-code">
-                <input type="text" placeholder="输入优惠码">
+                <input type="text" placeholder="Codice_Default='sconto'">
                 <button>应用优惠码</button>
                 <p class="discount-error">Codice non valido</p>
             </div>
@@ -121,11 +119,17 @@
             <p class="empty-cart-message" id="empty-cart-message" style="display: none;">Your cart is currently empty.</p>
         </div>
     </div>
-    <footer class="footer">
-        <div class="footer-bottom">
-            <p>&copy;ZOZO inc.</p>
-        </div>
-    </footer>
+    
+    <!-- 模态框 -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>购买成功！</h2>
+        <p>感谢您的购买，我们会尽快处理您的订单。</p>
+        <button id="modal-close-btn">关闭</button>
+    </div>
+</div>
+
     <script src="js/cart.js"></script>
 </body>
 </html>

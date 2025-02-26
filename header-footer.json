@@ -1,0 +1,13 @@
+{
+  "header": {
+    "logo": "images/logo.png",
+    "homeLink": "index.html",
+    "cartLink": "cart.html",
+    "cartIcon": "images/carrello.png",
+    "cartCount": 0
+  },
+  "footer": {
+    "text": "&copy;ZOZO inc."
+  }
+}
+
