@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOZO-P</title>
+    <title>Bundle Package</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/product-detail.css">
+    <link rel="stylesheet" href="css/bundle.css">
 </head>
 <body>
     <header>
@@ -24,22 +25,25 @@
             </div>
         </nav>
     </header>
-    
-    <!-- Sezione dettagli prodotto -->
+
     <main class="product-detail">
         <div class="product-images">
             <div class="main-image">
-                <img id="main-image" src="" alt="Immagine del prodotto">
+                <img id="bundle-main-image" src="" alt="Bundle Package">
             </div>
         </div>
         <div class="product-info">
             <div class="product-header">
-                <h1 id="product-name"></h1>
-                <h2 id="product-price" class="product-price"></h2>
+                <h1 id="bundle-name"></h1>
+                <h2 class="product-price" id="bundle-price"></h2>
             </div>
-            <div id="product-options" class="product-options"></div>
-            <div id="product-description" class="product-description"></div>
-            <div id="product-specs" class="product-specs"></div>
+            <div class="product-options" id="product-options"></div>
+            <div class="product-description">
+                <h2 id="bundle-details-header"></h2>
+                <p id="bundle-description"></p>
+            </div>
+            <div id="product-specs"></div>
+            <button id="add-bundle-to-cart" class="add-to-cart-button"></button>
         </div>
     </main>
     <footer class="footer">
@@ -48,6 +52,6 @@
         </div>
     </footer>
     <script src="js/header-footer.js"></script>
-    <script src="js/product.js"></script>
+    <script src="js/bundle.js"></script>
 </body>
 </html>

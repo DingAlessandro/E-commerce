@@ -1,4 +1,3 @@
-/* 全局样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,54 +5,50 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 确保页面至少占满整个视口高度 */
+    min-height: 100vh;
 }
 
-/* 页面容器 */
 .page-container {
-    flex: 1; /* 占据剩余空间 */
+    flex: 1;
 }
 
-/* 导航栏样式 */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5dc; /* 浅米色 */
-    padding: 16px 32px; /* 调整为原来的 80% */
+    background-color: #f5f5dc;
+    padding: 16px 32px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 75px; /* 调整为原来的 80% */
+    height: 75px;
 }
 
-/* Logo 和 Home 链接的容器 */
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 20px; /* Logo 和 Home 链接之间的间距 */
+    gap: 20px;
 }
 
 .navbar-brand img {
-    height: 120px; /* 调整为原来的 80% */
+    height: 120px;
     width: 120px;
 }
 
-/* Home 链接样式 */
 .home-link {
-    font-size: 1.2rem; /* Dimensione del font per il link Home */
+    font-size: 1.2rem;
     color: #000;
     text-decoration: none;
-    transition: opacity 0.3s ease; /* Aggiungi effetto hover */
+    transition: opacity 0.3s ease;
 }
 
 .home-link:hover {
-    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
-    opacity: 0.8; /* Sfuma leggermente il link al passaggio del mouse */
+    text-decoration: underline;
+    opacity: 0.8;
 }
 
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 24px; /* 调整为原来的 80% */
+    gap: 24px;
 }
 
 .navbar-search {
@@ -62,25 +57,25 @@ body {
 }
 
 .navbar-search input {
-    padding: 8px 12px; /* 调整为原来的 80% */
+    padding: 8px 12px;
     border: 1px solid #ccc;
-    border-radius: 4px; /* 调整为原来的 80% */
-    margin-right: 8px; /* 调整为原来的 80% */
-    font-size: 0.9rem; /* 调整为原来的 80% */
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 0.9rem;
 }
 
 .navbar-search button {
-    padding: 8px 16px; /* 调整为原来的 80% */
-    background-color: #fafad2; /* 浅黄色 */
-    color: #333; /* 文字颜色改为深色 */
+    padding: 8px 16px;
+    background-color: #fafad2;
+    color: #333;
     border: none;
-    border-radius: 4px; /* 调整为原来的 80% */
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9rem; /* 调整为原来的 80% */
+    font-size: 0.9rem;
 }
 
 .navbar-search button:hover {
-    background-color: #e0e0b2; /* 浅黄色 hover 效果 */
+    background-color: #e0e0b2;
 }
 
 .navbar-cart {
@@ -89,70 +84,55 @@ body {
 }
 
 .navbar-cart img {
-    width: 50px; /* 调整为原来的 80% */
+    width: 50px;
     height: 50px;
 }
 
-.cart-count {
-    position: absolute;
-    top: -8px; /* 调整为原来的 80% */
-    right: -8px; /* 调整为原来的 80% */
-    background-color: red;
-    color: #fff;
-    border-radius: 50%;
-    padding: 4px 8px; /* 调整为原来的 80% */
-    font-size: 0.8rem; /* 调整为原来的 80% */
-}
-
-/* 大图片部分 */
 .hero-image {
-    width: 100%; /* 全屏宽度 */
-    height: 90vh; /* 高度为视口的 90% */
-    overflow: hidden; /* 隐藏超出部分 */
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
 }
 
 .hero-image img {
-    width: 100%; /* 图片宽度填满容器 */
-    height: 100%; /* 图片高度填满容器 */
-    object-fit: cover; /* 保持图片比例，覆盖整个区域 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* 水平分割线 */
 .divider {
     width: 100%;
-    height: 2px; /* 分割线高度 */
-    background-color: #ddd; /* 分割线颜色 */
-    margin: 20px 0; /* 上下间距 */
+    height: 2px;
+    background-color: #ddd;
+    margin: 20px 0;
 }
 
-/* 商品展示部分 */
-/* 商品展示部分 */
 .product-grid {
     display: flex;
     width: 100%;
 }
 
 .product-item {
-    flex: 1; /* 每个商品占据相等的宽度 */
+    flex: 1;
     text-align: center;
     padding: 20px;
     position: relative;
-    border-right: 1px solid #ddd; /* 商品之间的白线 */
-    transition: opacity 0.3s ease; /* 添加过渡效果 */
+    border-right: 1px solid #ddd;
+    transition: opacity 0.3s ease;
 }
 
 .product-item:hover {
-    opacity: 0.7; /* 鼠标悬停时变淡 */
+    opacity: 0.7;
 }
 
 .product-item:last-child {
-    border-right: none; /* 最后一个商品不需要右边框 */
+    border-right: none;
 }
 
 .product-item img {
     width: 100%;
-    height: 100%; /* 固定图片高度 */
-    object-fit: cover; /* 保持图片比例 */
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-info {
@@ -180,13 +160,12 @@ body {
     font-size: 0.9rem;
 }
 
-/* 页脚样式 */
 .footer {
-    background-color: #f5f5dc; /* 浅米色，与导航栏一致 */
+    background-color: #f5f5dc;
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #ddd; /* 顶部边框 */
-    margin-top: 110px; /* 为页脚留出足够的空白区域 */
+    border-top: 1px solid #ddd;
+    margin-top: 110px;
 }
 
 .footer-bottom p {

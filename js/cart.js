@@ -1,137 +1,224 @@
-let isDiscountApplied = false; // 标记是否已应用折扣
+document.addEventListener("DOMContentLoaded", function () {
+    // Carica i testi dinamici dal file cart.json
+    fetch('cart.json')
+        .then(response => response.json())
+        .then(data => {
+            const textContent = data.textContent;
 
-// 更新总金额和按钮状态的函数
-function updateCart() {
-    const cartItems = document.querySelectorAll('.cart-item');
-    const totalAmount = document.getElementById('total');
-    const originalTotalValue = document.getElementById('original-total-value');
-    const originalTotal = document.getElementById('original-total');
-    const checkoutButton = document.getElementById('checkout-button');
-    const emptyCartMessage = document.getElementById('empty-cart-message');
+            // Imposta i testi dinamici
+            document.getElementById('cart-title').textContent = textContent.cartTitle;
+            document.getElementById('total-amount-label').textContent = textContent.totalAmountLabel;
+            document.getElementById('discount-input').placeholder = textContent.discountCodePlaceholder;
+            document.getElementById('apply-discount-button').textContent = textContent.applyDiscountButton;
+            document.getElementById('discount-error').textContent = textContent.invalidCodeMessage;
+            document.getElementById('view-bundle-button').textContent = textContent.viewBundleButton;
+            document.getElementById('checkout-button').textContent = textContent.checkoutButton;
+            document.getElementById('empty-cart-message').textContent = textContent.emptyCartMessage;
+            document.getElementById('purchase-success-title').textContent = textContent.purchaseSuccessTitle;
+            document.getElementById('purchase-success-message').textContent = textContent.purchaseSuccessMessage;
+            document.getElementById('modal-close-btn').textContent = textContent.closeModalButton;
 
-    let total = 0;
-    cartItems.forEach(item => {
-        const price = parseFloat(item.querySelector('.price').textContent);
-        const quantity = parseInt(item.querySelector('.quantity').textContent);
-        total += price * quantity;
+            // Carica i dati del carrello
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                document.getElementById('empty-cart-message').style.display = 'block';
+            } else {
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+
+                    const itemImage = document.createElement('div');
+                    itemImage.classList.add('item-image');
+                    const img = document.createElement('img');
+                    img.src = item.image || 'images/default-product.jpg';
+                    img.alt = item.name;
+                    itemImage.appendChild(img);
+
+                    const itemDetails = document.createElement('div');
+                    itemDetails.classList.add('item-details');
+                    itemDetails.innerHTML = `
+                        <h3>${item.name}</h3>
+                        <p>Size: ${item.size || '-'}</p>
+                        <p>Color: ${item.color}</p>
+                        <p class="item-price">Price: US<span class="price">${item.price || '0.00'}</span></p>
+                    `;
+
+                    const itemActions = document.createElement('div');
+                    itemActions.classList.add('item-actions');
+                    itemActions.innerHTML = `
+                        <div class="quantity-control">
+                            <button class="decrease">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="increase">+</button>
+                        </div>
+                        <button class="delete">Delete</button>
+                    `;
+
+                    cartItem.appendChild(itemImage);
+                    cartItem.appendChild(itemDetails);
+                    cartItem.appendChild(itemActions);
+                    cartItemsContainer.appendChild(cartItem);
+
+                    const divider = document.createElement('div');
+                    divider.classList.add('cart-divider');
+                    cartItemsContainer.appendChild(divider);
+                });
+            }
+
+            initializeCart();
+        })
+        .catch(error => {
+            console.error("Errore nel caricare i testi dinamici:", error);
+        });
+});
+
+function initializeCart() {
+    let isDiscountApplied = false;
+
+    function updateCart() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        const totalAmount = document.getElementById('total');
+        const originalTotalValue = document.getElementById('original-total-value');
+        const originalTotal = document.getElementById('original-total');
+        const checkoutButton = document.getElementById('checkout-button');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+
+        let total = 0;
+        cartItems.forEach(item => {
+            const priceText = item.querySelector('.price').textContent.replace('$', '').trim();
+            const price = parseFloat(priceText) || 0;
+            const quantity = parseInt(item.querySelector('.quantity').textContent);
+            total += price * quantity;
+        });
+
+        if (isDiscountApplied) {
+            originalTotalValue.textContent = total.toFixed(2);
+            originalTotal.style.display = 'inline';
+            total *= 0.9;
+        } else {
+            originalTotal.style.display = 'none';
+        }
+
+        totalAmount.textContent = total.toFixed(2);
+
+        if (cartItems.length === 0) {
+            checkoutButton.disabled = true;
+            checkoutButton.style.opacity = 0.5;
+            emptyCartMessage.style.display = 'block';
+        } else {
+            checkoutButton.disabled = false;
+            checkoutButton.style.opacity = 1;
+            emptyCartMessage.style.display = 'none';
+        }
+    }
+
+    document.querySelectorAll('.delete').forEach(button => {
+        button.addEventListener('click', () => {
+            const cartItem = button.closest('.cart-item');
+            const nextElement = cartItem.nextElementSibling;
+
+            if (nextElement && nextElement.classList.contains('cart-divider')) {
+                nextElement.remove();
+            }
+
+            cartItem.remove();
+            updateLocalStorage();
+            updateCart();
+        });
     });
 
-    // 更新总金额
-    if (isDiscountApplied) {
-        originalTotalValue.textContent = total.toFixed(2); // 显示原价
-        originalTotal.style.display = 'inline'; // 显示划掉的原价
-        total = total * 0.9; // 应用 10% 折扣
-    } else {
-        originalTotal.style.display = 'none'; // 隐藏原价
-    }
-    totalAmount.textContent = total.toFixed(2);
+    document.querySelectorAll('.quantity-control').forEach(control => {
+        const decreaseButton = control.querySelector('.decrease');
+        const increaseButton = control.querySelector('.increase');
+        const quantityDisplay = control.querySelector('.quantity');
 
-    // 检查购物车是否为空
-    if (cartItems.length === 0) {
-        checkoutButton.disabled = true; // 禁用按钮
-        checkoutButton.style.opacity = 0.5; // 按钮变淡
-        emptyCartMessage.style.display = 'block'; // 显示提示信息
-    } else {
-        checkoutButton.disabled = false; // 启用按钮
-        checkoutButton.style.opacity = 1; // 按钮恢复正常
-        emptyCartMessage.style.display = 'none'; // 隐藏提示信息
-    }
+        let quantity = parseInt(quantityDisplay.textContent);
+
+        decreaseButton.addEventListener('click', () => {
+            if (quantity > 1) {
+                quantity--;
+                quantityDisplay.textContent = quantity;
+                updateLocalStorage();
+                updateCart();
+            }
+        });
+
+        increaseButton.addEventListener('click', () => {
+            quantity++;
+            quantityDisplay.textContent = quantity;
+            updateLocalStorage();
+            updateCart();
+        });
+    });
+
+    document.querySelector('.discount-code button').addEventListener('click', () => {
+        const discountInput = document.querySelector('.discount-code input');
+        const discountError = document.querySelector('.discount-error');
+
+        if (isDiscountApplied) {
+            discountError.textContent = 'Cannot use multiple codes';
+            discountError.style.display = 'block';
+            return;
+        }
+
+        if (discountInput.value === 'sconto') {
+            isDiscountApplied = true;
+            discountError.style.display = 'none';
+            updateCart();
+        } else {
+            discountError.textContent = 'Invalid code';
+            discountError.style.display = 'block';
+        }
+    });
+
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        const cartItems = document.querySelectorAll('.cart-item');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+
+        if (cartItems.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+
+        document.querySelector('.cart-items').innerHTML = '';
+        localStorage.removeItem('cart');
+        updateCart();
+
+        const modal = document.getElementById('success-modal');
+        modal.style.display = 'flex';
+
+        document.getElementById('modal-close-btn').addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        emptyCartMessage.style.display = 'block';
+    });
+
+    updateCart();
 }
 
-// 删除商品的逻辑
-document.querySelectorAll('.delete').forEach(button => {
-    button.addEventListener('click', () => {
-        const cartItem = button.closest('.cart-item');
-        const previousElement = cartItem.previousElementSibling;
-
-        // 如果前一个元素是分割线，则一起删除
-        if (previousElement && previousElement.classList.contains('cart-divider')) {
-            previousElement.remove();
-        }
-
-        // 删除商品
-        cartItem.remove();
-        updateCart(); // 更新总金额和按钮状态
-    });
-});
-
-// 增加和减少商品数量的逻辑
-document.querySelectorAll('.quantity-control').forEach(control => {
-    const decreaseButton = control.querySelector('.decrease');
-    const increaseButton = control.querySelector('.increase');
-    const quantityDisplay = control.querySelector('.quantity');
-
-    let quantity = parseInt(quantityDisplay.textContent);
-
-    decreaseButton.addEventListener('click', () => {
-        if (quantity > 1) {
-            quantity--;
-            quantityDisplay.textContent = quantity;
-            updateCart(); // 更新总金额和按钮状态
-        }
-    });
-
-    increaseButton.addEventListener('click', () => {
-        quantity++;
-        quantityDisplay.textContent = quantity;
-        updateCart(); // 更新总金额和按钮状态
-    });
-});
-
-// 优惠码逻辑
-document.querySelector('.discount-code button').addEventListener('click', () => {
-    const discountInput = document.querySelector('.discount-code input');
-    const discountError = document.querySelector('.discount-error');
-
-    if (isDiscountApplied) {
-        discountError.textContent = '不能使用多个码';
-        discountError.style.display = 'block';
-        return;
-    }
-
-    if (discountInput.value === 'sconto') {
-        isDiscountApplied = true; // 标记已应用折扣
-        discountError.style.display = 'none'; // 隐藏错误提示
-        updateCart(); // 更新总金额
-    } else {
-        discountError.textContent = 'Codice non valido';
-        discountError.style.display = 'block'; // 显示错误提示
-    }
-});
-
-// 初始化
-updateCart();
-
-// Checkout逻辑
-document.getElementById('checkout-button').addEventListener('click', () => {
+function updateLocalStorage() {
     const cartItems = document.querySelectorAll('.cart-item');
-    const emptyCartMessage = document.getElementById('empty-cart-message');
+    const updatedCart = [];
 
-    if (cartItems.length === 0) {
-        alert('Il carrello è vuoto!');
-        return;
-    }
+    cartItems.forEach(item => {
+        const name = item.querySelector('h3').textContent;
+        const size = item.querySelector('p:nth-child(2)').textContent.replace('Size: ', '');
+        const color = item.querySelector('p:nth-child(3)').textContent.replace('Color: ', '');
+        const price = "$" + item.querySelector('.price').textContent.replace('$', '').trim();
+        const quantity = parseInt(item.querySelector('.quantity').textContent);
+        const image = item.querySelector('img').src;
 
-    // Svuota il carrello
-    document.querySelector('.cart-items').innerHTML = '';
-    updateCart(); // Aggiorna il totale
-
-    // Mostra il modal di successo
-    const modal = document.getElementById('success-modal');
-    modal.style.display = 'flex';
-
-    // Chiudi il modal quando si clicca sul pulsante di chiusura
-    document.getElementById('modal-close-btn').addEventListener('click', () => {
-        modal.style.display = 'none';
+        updatedCart.push({ name, size, color, price, quantity, image });
     });
 
-    // Chiudi il modal quando si clicca fuori dal contenuto
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    // Mostra il messaggio "Il carrello è vuoto"
-    emptyCartMessage.style.display = 'block';
-});
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+}

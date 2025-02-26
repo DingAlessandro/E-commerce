@@ -1,13 +1,12 @@
 {
   "header": {
-    "logo": "images/logo.png",
-    "homeLink": "index.html",
-    "cartLink": "cart.html",
-    "cartIcon": "images/carrello.png",
-    "cartCount": 0
+      "logo": "images/logo.png",
+      "homeLink": "index.html",
+      "homeText": "Home",
+      "cartLink": "cart.html",
+      "cartIcon": "images/carrello.png"
   },
   "footer": {
-    "text": "&copy;ZOZO inc."
+      "text": "&copy;ZOZO inc."
   }
 }
-

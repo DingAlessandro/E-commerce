@@ -1,135 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOZO-CART</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- 原有样式表 -->
-    <link rel="stylesheet" href="css/cart.css"> <!-- 额外的购物车样式表 -->
+    <title id="cart-title"></title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <!-- Logo e Home link -->
             <div class="navbar-brand">
-                <img src="images/logo.png" alt="Logo visvim">
-                <a href="" class="home-link"></a> <!-- Link alla home -->
+                <img src="" alt="Logo visvim">
+                <a href="" class="home-link"></a>
             </div>
         
-            <!-- Ricerca e Carrello -->
             <div class="navbar-right">
                 <div class="navbar-cart">
-                    <!-- Link al carrello aggiunto dinamicamente con JSON -->
                     <a href="">
-                        <img src="images/carrello.png" alt="Carrello">
-                        <span class="cart-count">0</span>
+                        <img src="" alt="Carrello">
                     </a>
                 </div>
             </div>
         </nav>
     </header>
     
-    <!-- 购物车模块 -->
+    
     <div class="cart-container">
-        <!-- 左侧购物车商品列表 -->
-        <div class="cart-items">
-            <!-- 商品 1 -->
-            <div class="cart-divider"></div>
-            <div class="cart-item">
-                <div class="item-image">
-                    <img src="images/MAVCAT/M_khaki.jpg" alt="MAVICAT 8.00">
-                </div>
-                <div class="item-details">
-                    <h3>MAVICAT 8.00</h3>
-                    <p>尺寸: -</p>
-                    <p>颜色: 101A03</p>
-                    <p class="item-price">价格: US$<span class="price">1206.00</span></p>
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-control">
-                        <button class="decrease">-</button>
-                        <span class="quantity">1</span>
-                        <button class="increase">+</button>
-                    </div>
-                    <button class="delete">删除</button>
-                </div>
-            </div>
+        <div class="cart-items"></div>
 
-            <!-- 商品 2 -->
-            <div class="cart-divider"></div>
-            <div class="cart-item">
-                <div class="item-image">
-                    <img src="images/DALTON SLACKS/S_black.jpg" alt="DALTON BLACKS (WN)">
-                </div>
-                <div class="item-details">
-                    <h3>DALTON BLACKS (WN)</h3>
-                    <p>尺寸: 2</p>
-                    <p>颜色: BLACK</p>
-                    <p class="item-price">价格: US$<span class="price">461.00</span></p>
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-control">
-                        <button class="decrease">-</button>
-                        <span class="quantity">1</span>
-                        <button class="increase">+</button>
-                    </div>
-                    <button class="delete">删除</button>
-                </div>
-            </div>
-
-            <!-- 商品 3 -->
-            <div class="cart-divider"></div>
-            <div class="cart-item">
-                <div class="item-image">
-                    <img src="images/MAVCAT/M_olive.jpg" alt="MAVICAT 8.00 - OLIVE">
-                </div>
-                <div class="item-details">
-                    <h3>MAVICAT 8.00 - OLIVE</h3>
-                    <p>尺寸: -</p>
-                    <p>颜色: OLIVE</p>
-                    <p class="item-price">价格: US$<span class="price">1206.00</span></p>
-                </div>
-                <div class="item-actions">
-                    <div class="quantity-control">
-                        <button class="decrease">-</button>
-                        <span class="quantity">1</span>
-                        <button class="increase">+</button>
-                    </div>
-                    <button class="delete">删除</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 右侧结账模块 -->
         <div class="checkout-summary">
-            <h3>总金额</h3>
+            <h3 id="total-amount-label"></h3>
             <p class="total-amount">
                 <span id="original-total" style="text-decoration: line-through; display: none;">US$<span id="original-total-value"></span></span>
                 <span id="discounted-total">US$<span id="total"></span></span>
             </p>
 
-            <!-- 优惠码输入框 -->
             <div class="discount-code">
-                <input type="text" placeholder="Codice_Default='sconto'">
-                <button>应用优惠码</button>
-                <p class="discount-error">Codice non valido</p>
+                <input type="text" id="discount-input" placeholder="">
+                <button id="apply-discount-button"></button>
+                <p class="discount-error" id="discount-error"></p>
             </div>
 
-            <button class="checkout-button" id="checkout-button">Proceed to Checkout</button>
-            <p class="empty-cart-message" id="empty-cart-message" style="display: none;">Your cart is currently empty.</p>
+            <a href="bundle.html" class="bundle-button" id="view-bundle-button"></a>
+
+            <button class="checkout-button" id="checkout-button"></button>
+            <p class="empty-cart-message" id="empty-cart-message" style="display: none;"></p>
         </div>
     </div>
-    
-    <!-- 模态框 -->
-<div id="success-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2>购买成功！</h2>
-        <p>感谢您的购买，我们会尽快处理您的订单。</p>
-        <button id="modal-close-btn">关闭</button>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="purchase-success-title"></h2>
+            <p id="purchase-success-message"></p>
+            <button id="modal-close-btn"></button>
+        </div>
     </div>
-</div>
 
     <script src="js/cart.js"></script>
+    <script src="js/header-footer.js"></script>
 </body>
 </html>

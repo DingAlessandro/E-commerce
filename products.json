@@ -1,72 +1,151 @@
 {
-    "products": [
-      {
-        "name": "DALTON SLACKS (W/L)",
-        "price": "$681.00",
-        "colors": [
-          {
-            "color_name": "BLACK",
-            "image": "images/DALTON SLACKS/S_black.jpg",
-            "sizes": ["1", "2", "3", "4", "5"]
-          },
-          {
-            "color_name": "CHARCOAL",
-            "image": "images/DALTON SLACKS/S_charcoal.jpg",
-            "sizes": ["1", "2", "3", "4", "5"]
-          },
-          {
-            "color_name": "KHAKI",
-            "image": "images/DALTON SLACKS/S_khaki.jpg",
-            "sizes": ["1", "2", "3", "4", "5"]
-          }
-        ],
-        "description": [
-          "Pantaloni realizzati con un tessuto misto di lana tropicale e lino, ideali per un look raffinato e leggero.",
-          "Finitura pressata che conferisce un aspetto elegante e professionale.",
-          "Dotati di una cerniera personalizzata per garantire una maggiore durata e resistenza.",
-          "Bottoni in corno di bufalo, per un tocco di classe e robustezza.",
-          "Composizione: 76% lana, 24% lino per una combinazione perfetta di comfort e stile.",
-          "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini mostrate, a causa delle caratteristiche uniche del tessuto. Inoltre, è possibile che il prodotto subisca un leggero restringimento dopo il primo lavaggio."
-        ],
-        "specs": [
-          {"size": "1", "length": "98.5", "inseam": "70.2", "waist": "80", "thigh_width": "31.3", "hem": "17.5"},
-          {"size": "2", "length": "101", "inseam": "72.2", "waist": "85", "thigh_width": "32.5", "hem": "18.7"},
-          {"size": "3", "length": "103.5", "inseam": "74.2", "waist": "90", "thigh_width": "33.8", "hem": "20"},
-          {"size": "4", "length": "106", "inseam": "76.2", "waist": "95", "thigh_width": "35", "hem": "21.2"},
-          {"size": "5", "length": "108.5", "inseam": "78.2", "waist": "100", "thigh_width": "36.3", "hem": "22.5"}
-        ]
-      },
-      {
-        "name": "MAVCAT II (M)",
-        "price": "$1,206.00",
-        "colors": [
-          {
-            "color_name": "KHAKI",
-            "image": "images/MAVCAT/M_khaki.jpg",
-            "sizes": ["ONE SIZE"]
-          },
-          {
-            "color_name": "BLACK",
-            "image": "images/MAVCAT/M_black.jpg",
-            "sizes": ["ONE SIZE"]
-          },
-          {
-            "color_name": "OLIVE",
-            "image": "images/MAVCAT/M_olive.jpg",
-            "sizes": ["ONE SIZE"]
-          }
-        ],
-        "description": [
-          "Borsa per casco realizzata con un mix di cotone, lino e nylon personalizzato, perfetta per chi cerca un accessorio resistente e dal design unico.",
-          "Design con finali danneggiati per un look vintage e autentico.",
-          "Nastro militare personalizzato e chiusura lampo, per un tocco di stile funzionale e pratico.",
-          "Composizione: 73% cotone, 17% lino, 10% nylon per garantire durabilità e comfort.",
-          "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini a causa della natura del tessuto. Inoltre, il prodotto potrebbe subire un lieve restringimento dopo il lavaggio."
-        ],
-        "specs": [
-          {"size": "ONE SIZE", "height": "51", "width": "47"}
-        ]
-      }
-    ]
-  }
-  
+  "products": [
+    {
+      "name": "DALTON SLACKS (W/L)",
+      "price": "$681.00",
+      "colors": [
+        {
+          "color_name": "BLACK",
+          "image": "images/DALTON SLACKS/S_black.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "color_name": "CHARCOAL",
+          "image": "images/DALTON SLACKS/S_charcoal.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "color_name": "KHAKI",
+          "image": "images/DALTON SLACKS/S_khaki.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        }
+      ],
+      "description": [
+        "Pantaloni realizzati con un tessuto misto di lana tropicale e lino, ideali per un look raffinato e leggero.",
+        "Finitura pressata che conferisce un aspetto elegante e professionale.",
+        "Dotati di una cerniera personalizzata per garantire una maggiore durata e resistenza.",
+        "Bottoni in corno di bufalo, per un tocco di classe e robustezza.",
+        "Composizione: 76% lana, 24% lino per una combinazione perfetta di comfort e stile.",
+        "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini mostrate, a causa delle caratteristiche uniche del tessuto. Inoltre, è possibile che il prodotto subisca un leggero restringimento dopo il primo lavaggio."
+      ],
+      "specs": [
+        {"size": "1", "length": "98.5", "inseam": "70.2", "waist": "80", "thigh_width": "31.3", "hem": "17.5"},
+        {"size": "2", "length": "101", "inseam": "72.2", "waist": "85", "thigh_width": "32.5", "hem": "18.7"},
+        {"size": "3", "length": "103.5", "inseam": "74.2", "waist": "90", "thigh_width": "33.8", "hem": "20"},
+        {"size": "4", "length": "106", "inseam": "76.2", "waist": "95", "thigh_width": "35", "hem": "21.2"},
+        {"size": "5", "length": "108.5", "inseam": "78.2", "waist": "100", "thigh_width": "36.3", "hem": "22.5"}
+      ]
+    },
+    {
+      "name": "MAVCAT II (M)",
+      "price": "$1206.00",
+      "colors": [
+        {
+          "color_name": "KHAKI",
+          "image": "images/MAVCAT/M_khaki.jpg",
+          "sizes": ["ONE SIZE"]
+        },
+        {
+          "color_name": "BLACK",
+          "image": "images/MAVCAT/M_black.jpg",
+          "sizes": ["ONE SIZE"]
+        },
+        {
+          "color_name": "OLIVE",
+          "image": "images/MAVCAT/M_olive.jpg",
+          "sizes": ["ONE SIZE"]
+        }
+      ],
+      "description": [
+        "Borsa per casco realizzata con un mix di cotone, lino e nylon personalizzato, perfetta per chi cerca un accessorio resistente e dal design unico.",
+        "Design con finali danneggiati per un look vintage e autentico.",
+        "Nastro militare personalizzato e chiusura lampo, per un tocco di stile funzionale e pratico.",
+        "Composizione: 73% cotone, 17% lino, 10% nylon per garantire durabilità e comfort.",
+        "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini a causa della natura del tessuto. Inoltre, il prodotto potrebbe subire un lieve restringimento dopo il lavaggio."
+      ],
+      "specs": [
+        {"size": "ONE SIZE", "height": "51", "width": "47"}
+      ]
+    },
+    {
+      "name": "COBDA-FOLK",
+      "price": "$1491.00",
+      "colors": [
+        {
+          "color_name": "BLACK",
+          "image": "images/COBDA-FOLK/C_black.jpg", 
+          "sizes": ["M8", "M9", "M10", "M11", "M12"]
+        },
+        {
+          "color_name": "NAVY",
+          "image": "images/COBDA-FOLK/C_navy.jpg",
+          "sizes": ["M8", "M9", "M10", "M11", "M12"]
+        },
+        {
+          "color_name": "BLUE",
+          "image": "images/COBDA-FOLK/C_blue.jpg",
+          "sizes": ["M8", "M9", "M10", "M11", "M12"]
+        }
+      ],
+      "description": [
+        "Scarpe realizzate con pelle di mucca francese combinata con pelle di struzzo giapponese.",
+        "Fodera in pelle senza pigmenti e suola interna in sughero naturale.",
+        "Suola intermedia in EVA e suola esterna in gomma sostituibile.",
+        "Costruzione cucita a mano per una maggiore durata e stile.",
+        "Si prega di notare che le dimensioni e la vestibilità possono variare a seconda dello stile della scarpa e del materiale utilizzato. Inoltre, le pelli naturali possono presentare variazioni di colore o motivo rispetto alle immagini mostrate."
+      ],
+      "specs": [
+        {"size": "M8", "length": "26.5", "width": "9.5"},
+        {"size": "M9", "length": "27", "width": "9.7"},
+        {"size": "M10", "length": "27.5", "width": "10"},
+        {"size": "M11", "length": "28", "width": "10.2"},
+        {"size": "M12", "length": "28.5", "width": "10.5"}
+      ]
+    },
+    {
+      "name": "WILDCATTER SHIRT L/S",
+      "price": "$880.00",
+      "colors": [
+        {
+          "color_name": "GREEN",
+          "image": "images/WILDCATTER/S_green.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "color_name": "BLACK",
+          "image": "images/WILDCATTER/S_black.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        },
+        {
+          "color_name": "WHITE",
+          "image": "images/WILDCATTER/S_white.jpg",
+          "sizes": ["1", "2", "3", "4", "5"]
+        }
+      ],
+      "description": [
+        "Camicia a maniche lunghe in tela di rayon personalizzata.",
+        "Finitura pressata per un aspetto elegante.",
+        "Bottoni in osso personalizzati e bottoni a pressione americani.",
+        "Dettaglio ricamato 'Visvim' e cuciture fatte a mano.",
+        "Composizione: 100% rayon.",
+        "Si prega di notare che potrebbero esserci lievi variazioni di colore o motivo rispetto alle immagini mostrate. Potrebbe verificarsi un leggero restringimento dopo il primo lavaggio."
+      ],
+      "specs": [
+        {"size": "1", "length": "67", "chest": "121", "shoulder": "47", "sleeve": "62.5"},
+        {"size": "2", "length": "66", "chest": "125", "shoulder": "48.5", "sleeve": "64"},
+        {"size": "3", "length": "71", "chest": "129", "shoulder": "50", "sleeve": "63.5"},
+        {"size": "4", "length": "73.5", "chest": "134", "shoulder": "52", "sleeve": "67"},
+        {"size": "5", "length": "76", "chest": "139", "shoulder": "54", "sleeve": "63.5"}
+      ]
+    }
+  ],
+  "textContent": {
+        "productDetailsHeader": "Dettagli del prodotto",
+        "addToCartButton": "Aggiungi al carrello",
+        "productSpecsHeader": "Specifiche",
+        "viewSpecsLink": "Visualizza specifiche e colori",
+        "productNotFound": "Prodotto non trovato",
+        "missingNameParam": "Parametro 'name' mancante nell'URL",
+        "productLoadError": "Errore nel caricamento dei dati del prodotto"
+    }
+}
