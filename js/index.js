@@ -11,8 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
             heroImage.alt = hero.alt;
 
             // Gestisci la griglia dei prodotti
-            const productGrid = document.querySelector('.product-grid');
+            const products= document.querySelector('.products');
+            var divider = document.createElement('div');
+                divider.classList.add('divider');
+                var productGrid = document.createElement('div');
+                productGrid.classList.add('product-grid');
+            var num = 4;
             data.products.forEach(product => {
+                if (num == 4){
+                    num = 0;
+                    divider = document.createElement('div');
+                    divider.classList.add('divider');
+                    productGrid = document.createElement('div');
+                    productGrid.classList.add('product-grid');
+                    products.appendChild(divider);
+                }
+                num++;
                 const productItem = document.createElement('div');
                 productItem.classList.add('product-item');
                 productItem.dataset.name = product.name;
@@ -28,15 +42,20 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           `;
 
-                // Supponiamo che tu abbia un array di prodotti
                 productItem.addEventListener('click', function () {
                     // Passa il nome del prodotto tramite l'URL
                     window.location.href = `product.html?name=${encodeURIComponent(product.name)}`;
                 });
 
-
                 productGrid.appendChild(productItem);
+                products.appendChild(productGrid);
             });
+            
+            
         })
         .catch(error => console.error("Errore nel caricare i dati dei prodotti:", error));
 });
+
+var hh = document.createElement('div');
+hh.classList.add('divider');
+console.log(hh);
